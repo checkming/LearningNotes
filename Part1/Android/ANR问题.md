@@ -1,4 +1,16 @@
 #ANR
+
+## 那些操作会引起ANR?
+1.广播是否可以请求网络?
+     由于网络请求是一个耗时的操作,而BroadcastReceiver 里不能做一些比较耗时的操作,否则会弹出ANR(application no response )的对话框,因此广播不可以请求网络.
+     
+2.广播引起ANR的时间限制? 
+     在Android中,程序的响应被活动管理器和窗口管理器这两个系统服务所监视,当BroadcastReceiver 在10秒内没有执行完毕,Android会认为该程序无响应,所以在BroadcastReceiver 里不能做一些比较耗时的操作,否则会弹出ANR的对话框.
+     
+     
+## 解决的措施: 
+   如果需要完成一项比较耗时的工作,应该通过发送Intent给Service ,由Service来完成,而不是使用子线程的方法来解决,因为BroadcastReceiver 的生命周期很短,(在onCreate()执行后BroadcastReceiver 的实例就会被销毁),子线程可能还没有结束,BroadcastReceiver就先结束了.如果BroadcastReceiver 先结束了,它的宿主还在运行,那么子线程还会继续执行.但宿主进程此时很容易在系统需要内存时被优先杀死,因为根据activity的周期原理.(他是属于一个空没有任何活动组件的进程)
+
 ---
 
 1、ANR排错一般有三种类型
