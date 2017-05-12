@@ -29,7 +29,8 @@
     * [Bitmap的分析与使用](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Bitmap的分析与使用.md)
     * [热修复的原理](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/热修复技术.md)
     * [AIDL](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/AIDL.md)
-    * [Binder机制](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Binder机制.md)
+    
+    * [Binder机制](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Binder机制.md)
     * [Zygote和System进程的启动过程](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Zygote和System进程的启动过程.md)
     * [Android中的MVC，MVP和MVVM](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/MVC%2CMVP%2CMVVM的区别.md)
     * [MVP](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/MVP.md)
@@ -46,6 +47,10 @@
     * [Gradle](http://wuxiaolong.me/categories/Gradle/)
     * [查漏补缺](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/查漏补缺.md)
     * [Git操作](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Git操作.md)
+    * [Android的绘图原理]()
+    * [View 的事件分发机制]()
+    * [Handler的原理]()
+    * [ListView 的实现原理]()
 
 =======
 
