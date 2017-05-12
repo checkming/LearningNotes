@@ -2,16 +2,14 @@
 
 
 ## 前提背景(补)
-1.广播是否可以请求网络?
+1. 广播是否可以请求网络?
 
     由于网络请求是一个耗时的操作,而BroadcastReceiver 里不能做一些比较耗时的操作,否则会弹出ANR(application no response )的对话框,因此广播不可以请求网络.
      
-2.广播引起ANR的时间限制? 
+2. 广播引起ANR的时间限制? 
 
-    在Android中,程序的响应被活动管理器和窗口管理器这两个系统服务所监视,当BroadcastReceiver 在10秒内没有执行完毕,Android会认为该程序无响应,所以在BroadcastReceiver 里不能做一些比较耗时的操作,否则会弹出ANR的对话框.
+    在Android中,程序的响应被活动管理器和窗口管理器这两个系统服务所监视,当BroadcastReceiver 在10秒内没有执行完毕,Android会认为该程序无响应,所以在BroadcastReceiver 里不能做一些比较耗时的操作,否则会弹出ANR的对话框.
      
-     
----
 
 1、ANR排错一般有三种类型
 
