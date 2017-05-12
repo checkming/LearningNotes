@@ -510,7 +510,7 @@ public final void removeMessages(int what, Object object);
         Bitmap 没调用 recycle()方法，对于 Bitmap 对象在不使用时,我们应该先调用 recycle() 释放内存，然后才它设置为 null. 因为加载 Bitmap 对象的内存空间，一部分是 java 的，一部分 C 的（因为 Bitmap 分配的底层是通过 JNI 调用的 )。 而这个 recyle() 就是针对 C 部分的内存释放。
         构造 Adapter 时，没有使用缓存的 convertView ,每次都在创建新的 converView。这里推荐使用 ViewHolder。
 
-##总结
+##** 总结
 
 对 Activity 等组件的引用应该控制在 Activity 的生命周期之内； 如果不能就考虑使用 getApplicationContext 或者 getApplication，以避免 Activity 被外部长生命周期的对象引用而泄露。
 
@@ -526,8 +526,23 @@ Handler 的持有的引用对象最好使用弱引用，资源释放时也可以
 在 Java 的实现过程中，也要考虑其对象释放，最好的方法是在不使用某对象时，显式地将此对象赋值为 null，比如使用完Bitmap 后先调用 recycle()，再赋为null,清空对图片等资源有直接引用或者间接引用的数组（使用 array.clear() ; array = null）等，最好遵循谁创建谁释放的原则。
 
 正确关闭资源，对于使用了BraodcastReceiver，ContentObserver，File，游标 Cursor，Stream，Bitmap等资源的使用，应该在Activity销毁时及时关闭或者注销。
+1.检测工具的使用:DDMS-Heap
+2.检测内存泄漏工具的插件:MAT
+
+解决方案:
+ 1.使用单例模式
+ 创建一个单例时,传递的context需要与activity的生面周期一样长
+ 2.避免在非静态内部类中创建静态实例
+ 如果在非静态内部类中创建静态实例,则非静态内部类会持有其外部类的隐式引用,如果存储了该引用,则会导致对应的activity不会被垃圾回收机制回收.
+ 解决:如果将该内部类设为静态内部类或抽取出来封装成一个单例,则不会出现内存泄漏.
+ 3.及时关闭不使用的对象
+ 如file,cursor,文件时,需要及时关闭,以便及时回收它们所占有的内存.况且如果只是仅仅把他们的引用设置为null,而不关闭它们,就容易造成内存溢出.
+ 4.
+ 
+
 
 保持对对象生命周期的敏感，特别注意单例、静态对象、全局性集合等的生命周期。
+
 
 
 
