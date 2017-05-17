@@ -47,6 +47,7 @@
     * [Gradle](http://wuxiaolong.me/categories/Gradle/)
     * [查漏补缺](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/查漏补缺.md)
     * [Git操作](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Git操作.md)
+    
     * [Android的绘图原理]()
     * [View 的事件分发机制]()
     * [Handler的原理]()
